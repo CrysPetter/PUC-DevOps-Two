@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from pygments.lexer import default
+import random
 
 app = FastAPI()
 
@@ -10,3 +10,7 @@ async def root():
 @app.get("/teste1")
 async def funcaoteste():
     return {"message": "Deu certo o teste nº 02"}
+
+@app.get("/teste2")
+async def funcaoteste2():
+    return {"teste2": True, "num_aleatorio": random.randint(0, 1000)}
